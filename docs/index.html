@@ -15,6 +15,7 @@
 <a href="barcode_jan.html">バーコード読取</a>
 <p>
     <hr>
+    <button onclick="clearCache();">キャッシュクリア</button>
 </p>
 
 <p>
@@ -47,6 +48,13 @@
         });
     }
 
+
+    function clearCache() {
+		navigator.serviceWorker.getRegistration()
+			.then(registration => {
+				registration.unregister();
+			});
+    }
     document.getElementById("userAgentName").innerHTML = navigator.userAgent;
 </script>
 </body>
