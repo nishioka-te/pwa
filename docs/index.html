@@ -15,11 +15,11 @@
 <a href="barcode_jan.html">バーコード読取</a>
 <p>
     <hr>
-    <button onclick="clearCache();">キャッシュクリア</button>
+    <button onclick="unregisterServiceWorker();">キャッシュクリア</button>
 </p>
 
 <p>
-    <label>UserAgent:</label><span id="userAgentName"></span>
+    <label>UserAgent:</label><span id="userAgentName" style="color:gray;"></span>
 </p>
 
 <script>
@@ -48,13 +48,14 @@
         });
     }
 
-
-    function clearCache() {
+    // ServiceWorker 登録解除
+    function unregisterServiceWorker() {
 		navigator.serviceWorker.getRegistration()
 			.then(registration => {
 				registration.unregister();
 			});
     }
+
     document.getElementById("userAgentName").innerHTML = navigator.userAgent;
 </script>
 </body>
