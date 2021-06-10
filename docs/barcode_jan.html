@@ -108,6 +108,7 @@ window.addEventListener('load', function(event) {
       let jan = document.getElementById("jan");
       jan.value = result.codeResult.code;
       jan.scrollTop = jan.scrollHeight;
+      navigator.vibrate(200);
       DetectedCode = '';
       DetectedCount = 0;
     }
