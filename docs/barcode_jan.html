@@ -105,10 +105,10 @@ window.addEventListener('load', function(event) {
     }
     if (DetectedCount >= 3) {
       console.log(result.codeResult.code);
+      navigator.vibrate(300);
       let jan = document.getElementById("jan");
       jan.value = result.codeResult.code;
       jan.scrollTop = jan.scrollHeight;
-      navigator.vibrate(200);
       DetectedCode = '';
       DetectedCount = 0;
     }
@@ -128,7 +128,7 @@ function log(text) {
 </script>
 </head>
 <body>
-  <p>JANコード読取サンプル</p>
+  <p>JANコード 読取サンプル</p>
   <div>
   	<canvas id="preview"></canvas>
   </div>
